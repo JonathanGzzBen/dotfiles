@@ -27,6 +27,19 @@ install_powerlevel10k() {
 
 sudo apt update
 install_powerlevel10k
-source bin/python_tools_install.sh
 link
+
+echo "Install python tools? (Y/n)"
+read install_python_tools
+if [ "$install_python_tools" = 'y' -o "$install_python_tools" = 'Y' ] ; then
+    sh bin/python_tools_install.sh
+    echo "Python tools installed"
+fi
+
+echo "Install useful utilities? (Y/n)"
+read install_utilities
+if [ "$install_utilities" = 'y' -o "$install_utilities" = 'Y' ] ; then
+    sh utilities_install.exclude.sh
+    echo "Utilities installed"
+fi
 

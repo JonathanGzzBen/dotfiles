@@ -27,5 +27,6 @@ install_powerlevel10k() {
 
 sudo apt update
 install_powerlevel10k
+source bin/python_tools_install.sh
 link
 

@@ -1,8 +1,0 @@
-- clean: ['~']
-
-- link:
-    ~/.bashrc: bashrc
-    ~/.vimrc: vimrc
-    ~/.zshrc: zshrc
-
-

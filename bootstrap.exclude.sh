@@ -5,7 +5,7 @@ link() {
     echo "Symlink the files in this repo to the home directory? (y/n)"
     read resp
     if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
-        for file in $( ls -A | grep -vE '\.exclude*|LICENSE|\.git$|\.gitignore|.*.md' ) ; do
+        for file in $( ls -A | grep -vE '\.exclude*|LICENSE|bin|\.git$|\.gitignore|.*.md' ) ; do
             ln -svf "$PWD/$file" "$HOME"
         done
         echo "Symlinking complete"

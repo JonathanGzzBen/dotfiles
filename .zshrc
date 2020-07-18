@@ -114,11 +114,13 @@ LS_COLORS='ow=01;36;40'
 # This enables vifm
 bindkey -v
 
-# Aliases for file explorers
+# Exports
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+export PATH="$PATH:$HOME/.dotnet/tools/"
+export PATH="$PATH:$HOME/.local/bin/"
+
+# Aliases
 alias e.="explorer.exe ."
 alias .r=". ranger"
 
-# Set Vim as default text editor
-EDITOR=/usr/bin/vim
-VISUAL=/usr/bin/vim
-PATH="$PATH:$HOME/.dotnet/tools/"

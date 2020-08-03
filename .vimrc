@@ -54,8 +54,10 @@ if filereadable("/etc/vim/vimrc.local")
 endif
 
 " This are your modifications, Jonark
-highlight Visual cterm=reverse ctermbg=NONE
-set showcmd
+" highlight Visual cterm=reverse ctermbg=NONE
+" set showcmd
+set number
+set relativenumber
 
 " Install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))

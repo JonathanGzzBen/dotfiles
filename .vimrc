@@ -76,6 +76,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
+" vim-prettier configuration
+let g:prettier#exec_cmd_async = 1
+let g:prettier#autoformat_config_present = 1
+let g:prettier#config#use_tabs = 'false'
+
 "Set theme"
 let g:airline_theme='molokai'
 

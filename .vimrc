@@ -74,7 +74,11 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'preservim/nerdtree'
 call plug#end()
+
+" Nerdtree shortcuts
+map <C-o> :NERDTreeToggle<CR>
 
 " vim-prettier configuration
 let g:prettier#exec_cmd_async = 1

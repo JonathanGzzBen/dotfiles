@@ -119,6 +119,7 @@ export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export PATH="$PATH:$HOME/.dotnet/tools/"
 export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$(yarn global bin)"
 
 # Aliases
 alias e.="explorer.exe ."

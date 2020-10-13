@@ -75,7 +75,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'preservim/nerdtree'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
+
+" fzf shortcuts
+map <C-p> :Files
 
 " Nerdtree shortcuts
 map <C-o> :NERDTreeToggle<CR>

@@ -58,6 +58,8 @@ endif
 " set showcmd
 set number
 set relativenumber
+set guicursor=
+set autochdir
 
 " Install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))

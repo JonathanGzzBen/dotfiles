@@ -23,6 +23,8 @@ install_powerlevel10k() {
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     # Set zsh as default shell
     chsh -s $(which zsh)
+    # Open browser to install recommended fonts for powerlevel10k
+    xdg-open https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k
 }
 
 sudo apt update

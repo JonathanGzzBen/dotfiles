@@ -34,6 +34,7 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt update && sudo apt install yarn -y
 sudo apt install nodejs npm -y
 sudo apt install ffmpeg -y
+sudo apt install vim -y
 install_powerlevel10k
 link
 

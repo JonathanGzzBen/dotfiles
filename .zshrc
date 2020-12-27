@@ -121,6 +121,7 @@ export PATH="$PATH:$HOME/.dotnet/tools/"
 export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$(yarn global bin)"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # Aliases
 alias e.="explorer.exe ."

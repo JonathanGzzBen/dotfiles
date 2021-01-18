@@ -122,6 +122,7 @@ export PATH="$PATH:$HOME/.local/bin/"
 export PATH="$PATH:$(yarn global bin)"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$HOME/bin"
 
 # Aliases
 alias e.="explorer.exe ."

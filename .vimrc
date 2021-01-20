@@ -78,6 +78,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'dracula/vim',{'name':'dracula'}
 call plug#end()
 
 " fzf shortcuts
@@ -89,5 +90,7 @@ let g:prettier#autoformat_config_present = 1
 let g:prettier#config#use_tabs = 'false'
 
 "Set theme"
+let g:dracula_colorterm = 0
+colorscheme dracula
 let g:airline_theme='molokai'
 

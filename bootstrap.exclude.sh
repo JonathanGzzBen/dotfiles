@@ -28,6 +28,7 @@ install_powerlevel10k() {
 }
 
 sudo apt update
+link
 # Install yarn
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -35,8 +36,6 @@ sudo apt update && sudo apt install yarn -y
 sudo apt install nodejs npm -y
 sudo apt install ffmpeg -y
 sudo apt install vim -y
-install_powerlevel10k
-link
 
 echo "Install python tools? (Y/n)"
 read install_python_tools
@@ -52,3 +51,9 @@ if [ "$install_utilities" = 'y' -o "$install_utilities" = 'Y' ] ; then
     echo "Utilities installed"
 fi
 
+install_powerlevel10k
+
+echo "Opening themes download links"
+xdg-open https://draculatheme.com/gtk/
+xdg-open https://www.gnome-look.org/p/1356095/
+xdg-open https://www.gnome-look.org/s/Gnome/p/1332404/

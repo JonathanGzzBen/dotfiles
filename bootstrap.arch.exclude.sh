@@ -22,7 +22,7 @@ install_powerlevel10k() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     # Set zsh as default shell
-    chsh -s $(which zsh)
+    sudo chsh -s $(which zsh)
     sudo pacman -Syu community/ttf-meslo-nerd-font-powerlevel10k
 }
 

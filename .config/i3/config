@@ -183,6 +183,7 @@ bar {
 }
 
 for_window [class="Alacritty" instance="floating"] floating enable
+for_window [class="feh"] floating enable
 
 exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/*
 exec --no-startup-id picom --config /home/jonark/.config/picom.conf

@@ -15,6 +15,24 @@ link() {
     fi
 }
 
+link_configurations() {
+    echo "Symlink configuration files? [Y/n]"
+    read resp
+    if [ "resp" != 'n' -o "$resp" != 'N' ] ; then
+        for file in $(ls .config -A) ; do
+	    config_directory="$HOME/.config"
+	    full_file_path=$(readlink -f $file)
+	    prefix="/home/jonark/dotfiles/"
+	    link_path=${full_file_path#$prefix}
+	    echo "$PWD/.config/$file" "$HOME/.config/$link_path"
+	    ln -sdvf "$PWD/.config/$file" "$HOME/.config/$link_path"
+        done
+	echo "Symlinking configurations complete"
+    else
+        echo "Symlinking configurations canceled"
+    fi
+}
+
 install_powerlevel10k() {
     echo "Installinz zsh"
     sudo pacman -Syu zsh --noconfirm
@@ -23,10 +41,11 @@ install_powerlevel10k() {
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     # Set zsh as default shell
     sudo chsh -s $(which zsh)
-    sudo pacman -Syu community/ttf-meslo-nerd-font-powerlevel10k
+    yay -S ttf-meslo-nerd-font-powerlevel10k
 }
 
 link
+link_configurations
 # Install yarn
 sudo pacman -Syu community/yarn community/nodejs community/npm extra/vim  --noconfirm
 

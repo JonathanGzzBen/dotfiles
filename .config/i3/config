@@ -184,6 +184,7 @@ bar {
 
 for_window [class="Alacritty" instance="floating"] floating enable
 
+exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/*
 exec --no-startup-id picom --config /home/jonark/.config/picom.conf
 exec --no-startup-id setxkbmap -option caps:escape
 bindsym Print exec --no-startup-id scrot -fo /tmp/screenshot.png && xclip -selection clipboard -target image/png -i /tmp/screenshot.png

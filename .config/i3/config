@@ -189,6 +189,6 @@ exec --no-startup-id setxkbmap -option caps:escape
 bindsym Print exec --no-startup-id  i3-scrot -dc
 bindsym --release $mod+Shift+s exec --no-startup-id i3-scrot -sc
 bindsym --release $mod+Shift+v exec --no-startup-id alacritty --class floating -e pulsemixer
-bindsym --release $mod+d exec --no-startup-id rofi -show drun
-bindsym --release $mod+c exec --no-startup-id rofi -show window
+bindsym --release $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym --release $mod+c exec --no-startup-id rofi -show window -show-icons
 bindsym --release $mod+Shift+x exec --no-startup-id i3lock -i /usr/share/backgrounds/i3lock.png

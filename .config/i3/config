@@ -186,8 +186,8 @@ for_window [class="Alacritty" instance="floating"] floating enable
 
 exec --no-startup-id picom --config /home/jonark/.config/picom.conf
 exec --no-startup-id setxkbmap -option caps:escape
-bindsym Print exec --no-startup-id  i3-scrot -dc
-bindsym --release $mod+Shift+s exec --no-startup-id i3-scrot -sc
+bindsym Print exec --no-startup-id scrot -fo /tmp/screenshot.png && xclip -selection clipboard -target image/png -i /tmp/screenshot.png
+bindsym --release $mod+Shift+s exec --no-startup-id scrot -sfo /tmp/screenshot.png && xclip -selection clipboard -target image/png -i /tmp/screenshot.png
 bindsym --release $mod+Shift+v exec --no-startup-id alacritty --class floating -e pulsemixer
 bindsym --release $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym --release $mod+c exec --no-startup-id rofi -show window -show-icons

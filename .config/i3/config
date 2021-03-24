@@ -194,3 +194,9 @@ bindsym --release $mod+Shift+v exec --no-startup-id alacritty --class floating -
 bindsym --release $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym --release $mod+c exec --no-startup-id rofi -show window -show-icons
 bindsym --release $mod+Shift+x exec --no-startup-id i3lock -i /usr/share/backgrounds/i3lock.png
+
+# Media player controls
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous

@@ -187,7 +187,7 @@ for_window [class="feh"] floating enable
 
 exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/*
 exec --no-startup-id picom --config /home/jonark/.config/picom.conf
-exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id setxkbmap -option caps:escape -layout us,latam -option grp:alt_space_toggle
 bindsym Print exec --no-startup-id scrot -fo /tmp/screenshot.png && xclip -selection clipboard -target image/png -i /tmp/screenshot.png
 bindsym --release $mod+Shift+s exec --no-startup-id scrot -sfo /tmp/screenshot.png && xclip -selection clipboard -target image/png -i /tmp/screenshot.png
 bindsym --release $mod+Shift+v exec --no-startup-id alacritty --class floating -e pulsemixer

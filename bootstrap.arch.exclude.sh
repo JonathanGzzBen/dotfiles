@@ -25,8 +25,9 @@ link_configurations() {
 	    prefix="/home/jonark/dotfiles/"
 	    link_path=${full_file_path#$prefix}
 	    echo "$PWD/.config/$file" "$HOME/.config/$link_path"
-	    ln -sdvf "$PWD/.config/$file" "$HOME/.config/$link_path"
+	    ln -sdvf "$PWD/.config/$file" "$HOME/.config/"
         done
+	ln -svf "$PWD/.config/i3/config" "$HOME/.config/i3/config"
 	echo "Symlinking configurations complete"
     else
         echo "Symlinking configurations canceled"

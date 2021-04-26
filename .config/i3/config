@@ -180,6 +180,7 @@ bindsym $mod+r mode "resize"
 #  finds out, if available)
 bar {
         status_command i3status
+	tray_output HDMI-0
 }
 
 for_window [class="Alacritty" instance="floating"] floating enable
@@ -196,7 +197,7 @@ bindsym --release $mod+Shift+s exec --no-startup-id scrot -sfo /tmp/screenshot.p
 bindsym --release $mod+Shift+v exec --no-startup-id alacritty --class floating -e pulsemixer
 bindsym --release $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym --release $mod+c exec --no-startup-id rofi -show window -show-icons
-bindsym --release $mod+Shift+x exec --no-startup-id i3lock -i /usr/share/backgrounds/i3lock.png
+bindsym --release $mod+Shift+x exec --no-startup-id i3lock -i /usr/share/backgrounds/i3images/i3lock.png
 bindsym $mod+Shift+greater move workspace to output right
 bindsym $mod+Shift+less move workspace to output left
 

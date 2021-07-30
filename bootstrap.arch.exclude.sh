@@ -37,7 +37,7 @@ link_configurations() {
 install_powerlevel10k() {
     echo "Install zsh and powerlevel10k? [Y/n]"
     read resp
-    if [ "$resp" != 'n' -o "$resp" != 'N'] ; then
+    if [ "$resp" != 'n' -o "$resp" != 'N' ] ; then
         sudo pacman -Sy zsh --noconfirm
         echo "Installing oh-my-zsh"
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -54,7 +54,7 @@ link
 link_configurations
 echo "Install Vim plugins dependencies? [Y/n]"
 read resp
-if [ "$resp" != 'n' -o "$resp" != 'N'] ; then
+if [ "$resp" != 'n' -o "$resp" != 'N' ] ; then
     # Install yarn
     sudo pacman -Syu community/yarn community/nodejs community/npm extra/vim  --noconfirm
 fi

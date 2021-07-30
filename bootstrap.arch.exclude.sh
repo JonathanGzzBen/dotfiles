@@ -35,36 +35,29 @@ link_configurations() {
 }
 
 install_powerlevel10k() {
-    echo "Installinz zsh"
-    sudo pacman -Syu zsh --noconfirm
-    echo "Installing oh-my-zsh"
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    # Set zsh as default shell
-    sudo chsh -s $(which zsh)
-    yay -S ttf-meslo-nerd-font-powerlevel10k
+    echo "Install zsh and powerlevel10k? [Y/n]"
+    read resp
+    if [ "$resp" != 'n' -o "$resp" != 'N'] ; then
+        sudo pacman -Sy zsh --noconfirm
+        echo "Installing oh-my-zsh"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+        # Set zsh as default shell
+        sudo chsh -s $(which zsh)
+        chsh -s $(which zsh)
+        yay -S ttf-meslo-nerd-font-powerlevel10k
+    fi
 }
 
+install_powerlevel10k
 link
 link_configurations
-# Install yarn
-sudo pacman -Syu community/yarn community/nodejs community/npm extra/vim  --noconfirm
-
-echo "Install python tools? (Y/n)"
-read install_python_tools
-if [ "$install_python_tools" = 'y' -o "$install_python_tools" = 'Y' ] ; then
-    sh bin/python_tools_install.arch.sh
-    echo "Python tools installed"
+echo "Install Vim plugins dependencies? [Y/n]"
+read resp
+if [ "$resp" != 'n' -o "$resp" != 'N'] ; then
+    # Install yarn
+    sudo pacman -Syu community/yarn community/nodejs community/npm extra/vim  --noconfirm
 fi
-
-echo "Install useful utilities? (Y/n)"
-read install_utilities
-if [ "$install_utilities" = 'y' -o "$install_utilities" = 'Y' ] ; then
-    sh utilities_install.arch.exclude.sh
-    echo "Utilities installed"
-fi
-
-install_powerlevel10k
 
 echo "Opening themes download links"
 xdg-open https://draculatheme.com/gtk/

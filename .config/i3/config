@@ -203,10 +203,11 @@ for_window [class="feh"] floating enable
 
 # Window appearance
 hide_edge_borders smart
+default_border pixel
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #77628e #77628e #ffffff #2e9ef4   #285577
+client.focused          #77628e #77628e #ffffff #6272a4   #bd93f9
 client.focused_inactive #413a4d #413a4d #ffffff #484e50   #5f676a
 client.unfocused        #413a4d #413a4d #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -217,8 +218,8 @@ client.background       #ffffff
 exec_always --no-startup-id sh ~/bin/launch_polybar.sh
 # Run startup script
 exec --no-startup-id sh ~/bin/startup_script.sh
-
-exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds
+exec --no-startup-id systemd-run --uid=$(whoami) -E DISPLAY=:0 --on-active=15 ~/bin/set_random_wallpapers.sh
+# exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds
 exec --no-startup-id picom --config /home/jonark/.config/picom.conf
 exec --no-startup-id setxkbmap -option caps:escape -layout us,latam -option grp:alt_space_toggle
 bindsym Print exec --no-startup-id scrot -fo /tmp/screenshot.png && xclip -selection clipboard -target image/png -i /tmp/screenshot.png

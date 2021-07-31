@@ -63,7 +63,7 @@ font-5 = Noto Sans CJK JP:pixelsize=10;1
 
 modules-left = i3 xwindow
 modules-center = ncspot
-modules-right = pulseaudio xkeyboard date
+modules-right = wallpapers pulseaudio xkeyboard date
 
 tray-position = right
 tray-padding = 2
@@ -87,6 +87,10 @@ type = custom/script
 exec =  ~/bin/current_ncspot_song.sh
 interval = 2
 
+[module/wallpapers]
+type = custom/script
+exec = echo "🎨"
+click-left = feh --bg-fill --randomize /usr/share/backgrounds
 
 [module/xwindow]
 type = internal/xwindow

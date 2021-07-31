@@ -85,7 +85,8 @@ cursor-scroll = ns-resize
 [module/ncspot]
 type = custom/script
 exec =  ~/bin/current_ncspot_song.sh
-interval = 2
+interval = 1
+click-left = playerctl --player=ncspot play-pause
 
 [module/wallpapers]
 type = custom/script

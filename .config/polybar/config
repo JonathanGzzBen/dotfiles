@@ -36,7 +36,7 @@ height = 27
 ;offset-x = 1%
 ;offset-y = 1%
 ;radius = 6.0
-fixed-center = false
+fixed-center = true
 bottom = true
 
 background = ${colors.background}
@@ -59,8 +59,10 @@ font-1 = DejaVu Sans:style=Italic:pixelsize=10;1
 font-2 = MesloLGS NF:pixelsize=10;1
 font-3 = Noto Color Emoji:scale=10;1
 font-4 = Segoe UI Symbol:size=10;1
+font-5 = Noto Sans CJK JP:pixelsize=10;1
 
 modules-left = i3 xwindow
+modules-center = ncspot
 modules-right = pulseaudio xkeyboard date
 
 tray-position = right
@@ -80,6 +82,12 @@ wm-restack = i3
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[module/ncspot]
+type = custom/script
+exec =  ~/bin/current_ncspot_song.sh
+interval = 2
+
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -88,7 +96,7 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = "⌨ "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
@@ -148,7 +156,7 @@ date-alt = " %d-%m-%Y"
 time = %H:%M
 time-alt = %H:%M
 
-format-prefix = 
+format-prefix = 🕑 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f8f8f2
 

@@ -218,8 +218,7 @@ client.background       #ffffff
 exec_always --no-startup-id sh ~/bin/launch_polybar.sh
 # Run startup script
 exec --no-startup-id sh ~/bin/startup_script.sh
-exec --no-startup-id systemd-run --uid=$(whoami) -E DISPLAY=:0 --on-active=5 --on-unit-active=10 ~/bin/set_random_wallpapers.sh
-# exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds
+exec --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds
 exec --no-startup-id picom --config /home/jonark/.config/picom.conf
 exec --no-startup-id setxkbmap -option caps:escape -layout us,latam -option grp:alt_space_toggle
 bindsym Print exec --no-startup-id scrot -fo /tmp/screenshot.png && xclip -selection clipboard -target image/png -i /tmp/screenshot.png

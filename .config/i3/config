@@ -237,7 +237,11 @@ bindsym XF86AudioMute exec --no-startup-id pulsemixer --toggle-mute
 
 # Media player controls
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym Shift+XF86AudioPlay exec --no-startup-id playerctl --player=ncspot play-pause
 bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym Shift+XF86AudioPause exec --no-startup-id playerctl --player=ncspot play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym Shift+XF86AudioNext exec --no-startup-id playerctl --player=ncspot next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym Shift+XF86AudioPrev exec --no-startup-id playerctl --player=ncspot previous
 

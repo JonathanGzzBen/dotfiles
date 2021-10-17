@@ -201,6 +201,9 @@ bindsym $mod+r mode "resize"
 for_window [class="Alacritty" instance="floating"] floating enable
 for_window [class="feh"] floating enable
 
+assign [class="Alacritty" instance="ncspot"] 10
+assign [class="discord"] 9
+
 # Window appearance
 hide_edge_borders smart
 default_border pixel
@@ -214,6 +217,16 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
+# Initial apps
+exec --no-startup-id alacritty --class ncspot -e ncspot
+exec --no-startup-id discord
+exec --no-startup-id brave
+exec --no-startup-id ulauncher
+#exec --no-startup-id i3-msg 'workspace 1; exec brave'
+
+# Changes workspace and focus
+focus_on_window_activation focus 
+
 # Launch polybar
 exec_always --no-startup-id sh ~/bin/launch_polybar.sh
 # Run startup script
@@ -224,7 +237,7 @@ exec --no-startup-id setxkbmap -option caps:escape -layout us,latam -option grp:
 bindsym Print exec --no-startup-id scrot -fo /tmp/screenshot.png && xclip -selection clipboard -target image/png -i /tmp/screenshot.png
 bindsym --release $mod+Shift+s exec --no-startup-id scrot -sfo /tmp/screenshot.png && xclip -selection clipboard -target image/png -i /tmp/screenshot.png
 bindsym --release $mod+Shift+v exec --no-startup-id alacritty --class floating -e pulsemixer
-bindsym --release $mod+d exec --no-startup-id rofi -show drun -show-icons
+#bindsym --release $mod+d exec --no-startup-id rofi -show drun -show-icons
 bindsym --release $mod+c exec --no-startup-id rofi -show window -show-icons
 bindsym --release $mod+Shift+x exec --no-startup-id i3lock -i /usr/share/backgrounds/i3images/i3lock.png
 bindsym $mod+Shift+greater move workspace to output right

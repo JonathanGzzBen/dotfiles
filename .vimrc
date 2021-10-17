@@ -82,7 +82,7 @@ Plug 'dracula/vim',{'name':'dracula'}
 call plug#end()
 
 " fzf shortcuts
-map <C-p> :Files
+map <C-p> :Files<CR>
 
 " vim-prettier configuration
 let g:prettier#exec_cmd_async = 1

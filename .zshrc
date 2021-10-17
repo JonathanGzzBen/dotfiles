@@ -294,9 +294,10 @@ export PATH="$PATH:$(yarn global bin)"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Aliases
 alias e.="explorer.exe ."
 alias .r=". ranger"
 alias lfp="lfrun"
-
+alias tmux="TERM=screen-256color tmux"

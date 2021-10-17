@@ -66,7 +66,7 @@ modules-center = ncspot
 modules-right = wallpapers pulseaudio xkeyboard date
 
 tray-position = right
-tray-padding = 2
+tray-padding = 2 
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -87,6 +87,8 @@ type = custom/script
 exec =  ~/bin/current_ncspot_song.sh
 interval = 1
 click-left = playerctl --player=ncspot play-pause
+scroll-up = playerctl --player=ncspot previous
+scroll-down = playerctl --player=ncspot next
 
 [module/wallpapers]
 type = custom/script

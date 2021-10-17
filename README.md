@@ -1,6 +1,12 @@
-# dotfiles
+# JonathanGzzBen dotfiles
 
-My dotfiles
+In Arch-based distros, run `bootstrap.arch.exclude.sh` to install personal software and symlink configuration files.
+
+## Instructions
+
+[Installation instructions](arch-installation-instructions.exclude.md)
+
+[Setup instructions](arch-setup-instructions.exclude.md)
 
 ## Software used in this setup
 

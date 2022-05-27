@@ -35,7 +35,7 @@ install_fish_agnoster() {
     echo "Install fish, omf and agnoster theme? [Y/n]"
     read resp
     if [ "$resp" != 'n' -o "$resp" != 'N' ] ; then
-		sudo apt install fish
+		sudo dnf install fish
 		curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 		omf install agnoster
 		chsh -s $(which fish)
@@ -47,4 +47,4 @@ install_fish_agnoster
 link
 link_configurations
 
-sudo apt install tilix python3-pip ranger
+sudo dnf install tilix python3-pip ranger

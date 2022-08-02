@@ -94,7 +94,9 @@ sudo systemctl enable lightdm
 # set greeter-session=lightdm-slick-greeter
 # under section [Seat:*]
 # Install WM
-sudo pacman -S i3-wm i3status i3lock dmenu rofi polybar xdg-utils scrot xclip picom 
+sudo pacman -S i3-wm i3status i3lock dmenu rofi polybar xdg-utils scrot xclip picom
+# Install secrets manager
+sudo pacman -S gnome-keyring libsecret 
 # Terminal tools
 yay -S alacritty playerctl pulsemixer feh ranger ueberzug htop
 # Fonts

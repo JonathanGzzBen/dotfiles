@@ -28,7 +28,6 @@ link_configurations() {
 	    ln -sdvf "$PWD/.config/$file" "$HOME/.config/"
         done
 	ln -svf "$PWD/.config/i3/config" "$HOME/.config/i3/config"
-    ln -svf "$PWD/.config/Thunar/accels.scm" "$HOME/.config/Thunar/accels.scm"
     ln -svf "$PWD/.config/Thunar/uca.xml" "$HOME/.config/Thunar/uca.xml"
     ln -svf "$PWD/.config/gtk-3.0/bookmarks" "$HOME/.config/gtk-3.0/bookmarks"
     ln -svf "$PWD/.config/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"

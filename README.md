@@ -12,7 +12,6 @@ In Arch-based distros, run `bootstrap.arch.exclude.sh` to install personal softw
 
 - LightDM
 - i3
-- ULauncher
 - Polybar
 - feh
 - alacritty

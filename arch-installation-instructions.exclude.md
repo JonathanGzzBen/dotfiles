@@ -13,6 +13,8 @@ pacman -Syyy
 pacman -S reflector
 reflector -c us -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syyy
+# Update keyring
+pacman -Sy archlinux-keyring
 ```
 
 ## Setup disks

@@ -7,6 +7,9 @@ if exists('g:vscode')
     nnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
     nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
 
+    nmap <leader>rn <Cmd>call VSCodeNotify('editor.action.rename')<CR>
+    nnoremap <silent> K :call VSCodeNotify('editor.action.showHover')<CR>
+    nmap <silent> K :call VSCodeNotify('editor.action.showHover')<CR>
 else
     let loaded_matchparen = 1
 
@@ -27,36 +30,41 @@ else
 
     set termguicolors
 
-    call plug#begin('~/.vim/plugged')
+    call plug#begin()
 
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'dracula/vim', { 'name': 'dracula' }
-    Plug 'morhetz/gruvbox'
     Plug 'preservim/nerdtree'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    Plug 'https://github.com/tomasr/molokai.git'
 
-    Plug 'fatih/vim-go', { 'do' :':GoUpdateBinaries' }
+    Plug 'https://github.com/tomasr/molokai.git'
+    Plug 'morhetz/gruvbox'
+    Plug 'sonph/onehalf', { 'rtp': 'vim' }
+    Plug 'xiyaowong/nvim-transparent'
+
     Plug 'easymotion/vim-easymotion'
     Plug 'preservim/nerdcommenter'
 
     Plug 'luochen1990/rainbow'
     Plug 'jiangmiao/auto-pairs'
 
-    Plug 'Rigellute/shades-of-purple.vim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'kyazdani42/nvim-web-devicons'
 
     Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
     call plug#end()
 
     let g:rainbow_active =1
-    colorscheme dracula
+    colorscheme onehalfdark
     let g:dracula_colorterm = 0
-    let g:airline_theme='dracula'
+    let g:airline_theme='molokai'
+    let g:transparent_enabled = v:true
 
-    nnoremap <C-p> :Files<CR>
+    "nnoremap <C-p> :Files<CR>
+    nnoremap <C-p> <cmd>Telescope find_files<CR>
     nnoremap <C-e> :NERDTreeToggle<CR>
     nnoremap <C-f> :NERDTreeFind<CR>
     nnoremap <C-W>O :call MaximizeToggle()<CR>
@@ -74,10 +82,28 @@ else
 
     tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<C-\><C-n>"
 
+    inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+    " Formatting selected code.
+    xmap <leader>f  <Plug>(coc-format-selected)
+    nmap <leader>f  <Plug>(coc-format-selected)
+
+    " Use tab for trigger completion with characters ahead and navigate.
+    " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+    " other plugin before putting this into your config.
+    inoremap <silent><expr> <TAB>
+          \ pumvisible() ? "\<C-n>" :
+          \ CheckBackspace() ? "\<TAB>" :
+          \ coc#refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+    " Add `:Format` command to format current buffer.
+    command! -nargs=0 Format :call CocActionAsync('format')
+
 endif
 
 function! StyleCppAndReload()
-    :execute 'silent !clang-format -i --style=Google %'
+    :execute 'silent !clang-format -i --style=file %'
     :edit!
 endfunction
 

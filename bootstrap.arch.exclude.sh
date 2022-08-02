@@ -18,7 +18,7 @@ link() {
 link_configurations() {
     echo "Symlink configuration files? [Y/n]"
     read resp
-    if [ "resp" != 'n' -o "$resp" != 'N' ] ; then
+    if [ "resp" != 'n' -a "$resp" != 'N' ] ; then
         for file in $(ls .config -A) ; do
 	    config_directory="$HOME/.config"
 	    full_file_path=$(readlink -f $file)
@@ -28,38 +28,55 @@ link_configurations() {
 	    ln -sdvf "$PWD/.config/$file" "$HOME/.config/"
         done
 	ln -svf "$PWD/.config/i3/config" "$HOME/.config/i3/config"
+    ln -svf "$PWD/.config/Thunar/accels.scm" "$HOME/.config/Thunar/accels.scm"
+    ln -svf "$PWD/.config/Thunar/uca.xml" "$HOME/.config/Thunar/uca.xml"
+    ln -svf "$PWD/.config/gtk-3.0/bookmarks" "$HOME/.config/gtk-3.0/bookmarks"
+    ln -svf "$PWD/.config/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
 	echo "Symlinking configurations complete"
     else
         echo "Symlinking configurations canceled"
     fi
 }
 
-install_powerlevel10k() {
-    echo "Install zsh and powerlevel10k? [Y/n]"
+install_fish_agnoster() {
+    echo "Install fish? and oh my fish? [Y/n]"
     read resp
-    if [ "$resp" != 'n' -o "$resp" != 'N' ] ; then
-        sudo pacman -Sy zsh --noconfirm
-        echo "Installing oh-my-zsh"
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-        # Set zsh as default shell
-        sudo chsh -s $(which zsh)
-        chsh -s $(which zsh)
-        yay -S ttf-meslo-nerd-font-powerlevel10k
+    if [ "$resp" != 'n' -a "$resp" != 'N' ] ; then
+        yay -S nerd-fonts-iosevka powerline-fonts fish --noconfirm
+        curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
+        fish install --path=~/.local/share/omf --config=~/.config/omf
+        rm install
+		chsh -s $(which fish)
     fi
+	echo "fish set as default shell"
 }
 
-install_powerlevel10k
 link
 link_configurations
-echo "Install Vim plugins dependencies? [Y/n]"
+
+echo "Install Neovim? [Y/n]"
 read resp
-if [ "$resp" != 'n' -o "$resp" != 'N' ] ; then
+if [ "$resp" != 'n' -a "$resp" != 'N' ] ; then
     # Install yarn
-    sudo pacman -Syu community/yarn community/nodejs community/npm extra/vim  --noconfirm
+    yay -S nodejs yarn npm neovim --noconfirm
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 fi
 
-echo "Opening themes download links"
-xdg-open https://draculatheme.com/gtk/
-xdg-open https://www.gnome-look.org/p/1356095/
-xdg-open https://www.gnome-look.org/s/Gnome/p/1332404/
+install_fish_agnoster
+
+echo "Copy bin directory? [Y/n]"
+read resp
+if [ "$resp" != 'n' -a "$resp" != 'N' ] ; then
+    echo "Copying bin to $HOME/bin"
+    cp bin "$HOME/bin" -r
+fi
+
+echo "Open theming links? [Y/n]"
+read resp
+if [ "$resp" != 'n' -a "$resp" != 'N' ] ; then
+    echo "Opening themes download links"
+    xdg-open https://draculatheme.com/gtk/
+    xdg-open https://www.gnome-look.org/p/1356095/
+    xdg-open https://www.gnome-look.org/s/Gnome/p/1332404/
+fi

@@ -84,7 +84,6 @@ sudo pacman -S nvidia nvidia-utils nvidia-settings
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
-cd ~
 # Install display manager
 sudo pacman -S xorg lightdm
 yay -S lightdm-slick-greeter
@@ -92,8 +91,14 @@ sudo systemctl enable lightdm
 # Modify /etc/lightdm/lightdm.conf and
 # set greeter-session=lightdm-slick-greeter
 # under section [Seat:*]
-# Install WM and fonts
-sudo pacman -S arandr i3-wm i3status i3lock xdg-utils scrot xclip rofi picom pulsemixer playerctl feh ranger ueberzug thunar thunar-archive-plugin tumbler file-roller noto-fonts noto-fonts-emoji noto-fonts-cjk alacritty htop
+# Install WM
+sudo pacman -S i3-wm i3status i3lock dmenu rofi polybar xdg-utils scrot xclip picom 
+# Terminal tools
+yay -S alacritty playerctl pulsemixer feh ranger ueberzug htop
+# Fonts
+yay -S noto-fonts noto-fonts-emoji noto-fonts-cjk
+# Thunar file explorer, plugins, thumbnails, archive managers, remote access
+yay -S thunar thunar-archive-plugin file-roller tumbler gvfs gvfs-smb sshfs
 yay -S ttf-ms-fonts // And install win10-auto
 # SSD trim
 sudo systemctl enable fstrim.timer

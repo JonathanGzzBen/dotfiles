@@ -41,7 +41,7 @@ install_fish_agnoster() {
     echo "Install fish? and oh my fish? [Y/n]"
     read resp
     if [ "$resp" != 'n' -a "$resp" != 'N' ] ; then
-        yay -S nerd-fonts-iosevka powerline-fonts fish --noconfirm
+        yay -S ttf-meslo-nerd-font-powerlevel10k powerline-fonts fish --noconfirm
         curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
         fish install --path=~/.local/share/omf --config=~/.config/omf
         rm install

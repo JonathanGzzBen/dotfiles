@@ -1,0 +1,4 @@
+{
+	"shell_cmd": "cmake_run.bat",
+	"working_dir": "$folder"
+}

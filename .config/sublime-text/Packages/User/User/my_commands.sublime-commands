@@ -1,0 +1,27 @@
+[
+	{
+		"caption": "Lint CMake OpenGL-Course Project",
+		"command": "exec",
+		"args": {"shell_cmd": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -clang64 -c \"clang-tidy -p build --config-file=.clang-tidy src/*.cpp src/*.h\"", "working_dir": "C:/Users/jonat/Documents/programming/Cpp/cpp-study/opengl-course"},
+	},
+	{
+		"caption": "Format CMake OpenGL-Course Project",
+		"command": "exec",
+		"args": {"shell_cmd": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -clang64 -c \"format_cpp_project.sh\"", "working_dir": "C:/Users/jonat/Documents/programming/Cpp/cpp-study/opengl-course"},
+	},
+	{
+		"caption": "Run CMake OpenGL-Course Project",
+		"command": "exec",
+		"args": {"shell_cmd": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -clang64 -c \"cd build && ./main.exe\"", "working_dir": "C:/Users/jonat/Documents/programming/Cpp/cpp-study/opengl-course"},
+	},
+	{
+		"caption": "Build CMake OpenGL-Course Project",
+		"command": "exec",
+		"args": {"shell_cmd": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -clang64 -c \"compile_cmake_project.sh\"", "working_dir": "C:/Users/jonat/Documents/programming/Cpp/cpp-study/opengl-course"},
+	},
+	{
+		"caption": "Print working directory MSYS",
+		"command": "exec",
+		"args": {"shell_cmd": "C:/msys64/msys2_shell.cmd -defterm -here -no-start -clang64 -c \"pwd\"", "working_dir": "C:/Users"},
+	}
+]

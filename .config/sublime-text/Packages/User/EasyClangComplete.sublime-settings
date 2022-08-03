@@ -1,0 +1,19 @@
+{
+    "flags_sources": [
+        {
+            "file": "compile_commands.json"
+        },
+        {
+            "file": "CMakeLists.txt"
+        },
+        {
+            "file": "CppProperties.json"
+        },
+        {
+            "file": "c_cpp_properties.json"
+        },
+        {
+            "file": ".clang_complete"
+        }
+    ]
+}

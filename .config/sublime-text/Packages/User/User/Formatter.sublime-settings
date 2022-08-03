@@ -1,0 +1,284 @@
+{
+    "show_statusbar": true,
+    "environ": {
+        "PATH": [],
+        "PYTHONPATH": [
+            "${packages}/User/formatter.assets/python/lib/python3.7/site-packages"
+        ],
+        "GEM_PATH": [
+            "${packages}/User/formatter.assets/ruby"
+        ]
+    },
+    "formatters": {
+        "beautysh": {
+            "executable_path": "${packages}/User/formatter.assets/python/bin/beautysh",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/beautyshrc.json"
+            },
+            "syntaxes": [
+                "bash"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "clangformat": {
+            "args": [
+                "-i"
+            ],
+            "syntaxes": [
+                "c",
+                "c++",
+                "objc",
+                "objc++",
+                "js",
+                "java",
+                "proto"
+            ],
+            "executable_path": "C:/Program Files/LLVM/bin/clang-format.exe",
+            "format_on_save": false,
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/clangformatrc.yaml"
+            },
+            "disable": false
+        },
+        "csscomb": {
+            "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/csscomb",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/csscombrc.json"
+            },
+            "syntaxes": [
+                "css",
+                "scss",
+                "sass",
+                "less"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "name_id": {
+            "args": [],
+            "syntaxes": [
+                "css",
+                "js",
+                "php"
+            ],
+            "executable_path": "",
+            "format_on_save": false,
+            "config_path": {
+                "default": "/path/to/config/___combo_js_plus_php_rc.json",
+                "css": "/path/to/config/___only_css_rc.json"
+            },
+            "disable": false
+        },
+        "yapf": {
+            "executable_path": "${packages}/User/formatter.assets/python/bin/yapf",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/yapfrc.yapf"
+            },
+            "syntaxes": [
+                "python"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "perltidy": {
+            "executable_path": "${packages}/User/formatter.assets/bin/perltidy",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/perltidyrc.cfg"
+            },
+            "syntaxes": [
+                "perl"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "black": {
+            "executable_path": "${packages}/User/formatter.assets/python/bin/black",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/blackrc.toml"
+            },
+            "syntaxes": [
+                "python"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "jsonmax": {
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/jsonmaxrc.json"
+            },
+            "syntaxes": [
+                "json"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "jsonmin": {
+            "format_on_save": false,
+            "syntaxes": [
+                "json"
+            ],
+            "disable": false
+        },
+        "stylelint": {
+            "args": [
+                "--config-basedir",
+                "${packages}/User/formatter.assets/javascript/node_modules"
+            ],
+            "syntaxes": [
+                "css",
+                "scss",
+                "sass",
+                "less",
+                "sss",
+                "sugarss"
+            ],
+            "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/stylelint",
+            "format_on_save": false,
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/stylelintrc.json"
+            },
+            "disable": false
+        },
+        "cleancss": {
+            "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/cleancss",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/cleancssrc.json"
+            },
+            "syntaxes": [
+                "css",
+                "scss",
+                "sass",
+                "less"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "rubocop": {
+            "executable_path": "${packages}/User/formatter.assets/ruby/bin/rubocop",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/rubocoprc.yml"
+            },
+            "syntaxes": [
+                "ruby"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "jsbeautifier": {
+            "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/js-beautify",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/jsbeautifyrc.json"
+            },
+            "syntaxes": [
+                "js",
+                "css",
+                "html",
+                "json"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "uncrustify": {
+            "executable_path": "${packages}/User/formatter.assets/bin/uncrustify",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/uncrustifyrc.cfg",
+                "objc": "${packages}/User/formatter.assets/config/uncrustifyrc_objc.cfg"
+            },
+            "syntaxes": [
+                "c",
+                "c++",
+                "cs",
+                "objc",
+                "objc++",
+                "d",
+                "java",
+                "pawn",
+                "vala"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "eslint": {
+            "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/eslint",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/eslintrc.json"
+            },
+            "syntaxes": [
+                "js"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "phpcsfixer": {
+            "executable_path": "${packages}/User/formatter.assets/bin/php-cs-fixer-v2.phar",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/phpcsfixerrc.php"
+            },
+            "syntaxes": [
+                "php"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "htmltidy": {
+            "executable_path": "${packages}/User/formatter.assets/bin/tidy",
+            "config_path": {
+                "xml": "${packages}/User/formatter.assets/config/htmltidyrc_xml.cfg",
+                "html": "${packages}/User/formatter.assets/config/htmltidyrc_html.cfg"
+            },
+            "syntaxes": [
+                "html",
+                "xml"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "prettier": {
+            "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/prettier",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/prettierrc.json"
+            },
+            "syntaxes": [
+                "css",
+                "scss",
+                "less",
+                "js",
+                "jsx",
+                "json",
+                "html",
+                "graphql",
+                "markdown",
+                "tsx",
+                "vue",
+                "yaml"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "htmlminifier": {
+            "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/html-minifier",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/htmlminifierrc.json"
+            },
+            "syntaxes": [
+                "html",
+                "xml"
+            ],
+            "format_on_save": false,
+            "disable": false
+        },
+        "terser": {
+            "executable_path": "${packages}/User/formatter.assets/javascript/node_modules/.bin/terser",
+            "config_path": {
+                "default": "${packages}/User/formatter.assets/config/terserrc.json"
+            },
+            "syntaxes": [
+                "js"
+            ],
+            "format_on_save": false,
+            "disable": false
+        }
+    },
+    "debug": true
+}

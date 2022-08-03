@@ -31,6 +31,9 @@ link_configurations() {
     ln -svf "$PWD/.config/Thunar/uca.xml" "$HOME/.config/Thunar/uca.xml"
     ln -svf "$PWD/.config/gtk-3.0/bookmarks" "$HOME/.config/gtk-3.0/bookmarks"
     ln -svf "$PWD/.config/gtk-3.0/settings.ini" "$HOME/.config/gtk-3.0/settings.ini"
+    mkdir "$HOME/sublime-text/Packages" -p
+    ln -sf "$PWD/.config/sublime-text/Installed Packages" "$HOME/.config/sublime-text/Installed Packages"
+    ln -sf "$PWD/.config/sublime-text/Packages/User" "$HOME/.config/sublime-text/Packages/User"
 	echo "Symlinking configurations complete"
     else
         echo "Symlinking configurations canceled"

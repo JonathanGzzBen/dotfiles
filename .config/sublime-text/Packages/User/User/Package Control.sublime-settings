@@ -1,0 +1,30 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+		"Transparency",
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Agila Theme",
+		"All Autocomplete",
+		"BracketHighlighter",
+		"Carbon",
+		"Clang Format",
+		"CMake",
+		"CodeFormatter",
+		"CoolFormat",
+		"FileBrowser",
+		"Formatter",
+		"Git",
+		"GitGutter",
+		"LSP",
+		"MarkdownPreview",
+		"Materialize",
+		"MoveTab",
+		"Package Control",
+		"SideBarEnhancements",
+		"Transparency",
+	],
+}

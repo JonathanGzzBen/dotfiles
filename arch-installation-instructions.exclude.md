@@ -56,7 +56,7 @@ locale-gen
 ## Install grub and other essential software (omit as needed if you know what you are doing)
 
 ```shell
-pacman -S grub efibootmgr dosfstools mtools networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober base-devel linux-headers reflector git bluez bluez-utils cups xdg-utils xdg-user-dirs pulseaudio openssh
+pacman -S grub efibootmgr dosfstools mtools networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober base-devel linux-headers reflector git bluez bluez-utils cups xdg-utils xdg-user-dirs pulseaudio openssh gzip
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB --removable
 grub-mkconfig -o /boot/grub/grub.cfg
 systemctl enable NetworkManager
@@ -102,7 +102,7 @@ yay -S alacritty playerctl pulsemixer feh ranger ueberzug htop
 # Fonts
 yay -S noto-fonts noto-fonts-emoji noto-fonts-cjk
 # Thunar file explorer, plugins, thumbnails, archive managers, remote access
-yay -S thunar thunar-archive-plugin file-roller tumbler gvfs gvfs-smb sshfs
+yay -S thunar thunar-archive-plugin file-roller tumbler gvfs gvfs-smb sshfs unzip
 yay -S ttf-ms-fonts // And install win10-auto
 # SSD trim
 sudo systemctl enable fstrim.timer

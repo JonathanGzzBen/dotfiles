@@ -74,6 +74,8 @@ if [ "$resp" != 'n' -a "$resp" != 'N' ] ; then
     cp bin "$HOME/bin" -r
 fi
 
+yay -Sy emacs discount unzip
+
 echo "Open theming links? [Y/n]"
 read resp
 if [ "$resp" != 'n' -a "$resp" != 'N' ] ; then

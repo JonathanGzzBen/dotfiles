@@ -76,6 +76,7 @@ install_terminal_tools:
     - install_yay
   commands:
     - yay -S alacritty playerctl pulsemixer feh ranger ueberzug htop --noconfirm
+    - yay -S ttf-meslo-nerd-font-powerlevel10k --noconfirm
 
 install_file_explorer:
   type: shell
@@ -91,6 +92,15 @@ install_personal_software:
   commands:
     - yay -Sy ncspot brave discord_arch_electron vlc --noconfirm
     - yay -Sy piper noisetorch-bin --noconfirm
+
+install_fish:
+  type: shell
+  requires:
+    - install_yay
+  commands:
+    - yay -S ttf-meslo-nerd-font-powerlevel10k fish --noconfirm
+    - curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+    - chsh -s $(which fish)
 
 all:
   type: shell

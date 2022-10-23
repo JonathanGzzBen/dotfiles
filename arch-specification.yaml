@@ -3,11 +3,11 @@ link_root_dotfiles:
   type: link
   links:
     /home/jonark/.vimrc: .vimrc
-    /home/jonark/.bashrc: .bashrc
+    # /home/jonark/.bashrc: .bashrc
     /home/jonark/.p10k.zsh: .p10k.zsh
     /home/jonark/.zshrc: .zshrc
     /home/jonark/.Xkbmap: .Xkbmap
-    /home/jonark/.Xkbmap: .gtkrc-2.0
+    /home/jonark/.gtkrc-2.0: .gtkrc-2.0
 
 link_root_directories:
   type: link

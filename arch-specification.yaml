@@ -64,7 +64,10 @@ install_i3_wm:
   type: shell
   requires:
     - install_display_manager
+    - install_terminal_tools
+    - install_file_explorer
     - install_yay
+    - install_fish
   commands:
     - sudo pacman -S i3-wm i3status i3lock dmenu rofi polybar xdg-utils scrot xclip picom --noconfirm
     - yay -S noto-fonts noto-fonts-emoji noto-fonts-cjk --noconfirm

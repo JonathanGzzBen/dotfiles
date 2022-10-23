@@ -48,15 +48,15 @@ install_yay:
 install_graphics_driver:
   type: shell
   commands:
-    - sudo pacman -S xf86-video-intel # intel
-      # - sudo pacman -S nvidia nvidia-utils nvidia-settings  # nvidia
+    - sudo pacman -S xf86-video-intel --noconfirm # intel
+      # - sudo pacman -S nvidia nvidia-utils nvidia-settings  --noconfirm # nvidia
 
 install_display_manager:
   type: shell
   requires:
     - install_graphics_driver
   commands:
-    - sudo pacman -S xorg lightdm lightdm-slick-greeter
+    - sudo pacman -S xorg lightdm lightdm-slick-greeter --noconfirm
     - sudo cp etc-confs/lightdm.conf /etc/lightdm/lightdm.conf
     - sudo systemctl enable lightdm
 
@@ -66,9 +66,9 @@ install_i3_wm:
     - install_display_manager
     - install_yay
   commands:
-    - sudo pacman -S i3-wm i3status i3lock dmenu rofi polybar xdg-utils scrot xclip picom
+    - sudo pacman -S i3-wm i3status i3lock dmenu rofi polybar xdg-utils scrot xclip picom --noconfirm
     - yay -S noto-fonts noto-fonts-emoji noto-fonts-cjk
-    - sudo pacman -S gnome-keyring libsecret
+    - sudo pacman -S gnome-keyring libsecret --noconfirm
 
 install_terminal_tools:
   type: shell
@@ -95,6 +95,8 @@ install_personal_software:
 all:
   type: shell
   requires:
+    - install_i3_wm
+    - install_file_explorer
     - link_root_dotfiles
     - link_root_directories
     - link_config_directories

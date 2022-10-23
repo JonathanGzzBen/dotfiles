@@ -13,7 +13,7 @@ link_root_directories:
   type: link
   links:
     /home/jonark/: bin
-    /home/jonark/.git: .git
+    /home/jonark/: .git
 
 link_config_directories:
   type: link

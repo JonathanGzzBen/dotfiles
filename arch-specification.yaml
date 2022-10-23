@@ -67,7 +67,7 @@ install_i3_wm:
     - install_yay
   commands:
     - sudo pacman -S i3-wm i3status i3lock dmenu rofi polybar xdg-utils scrot xclip picom --noconfirm
-    - yay -S noto-fonts noto-fonts-emoji noto-fonts-cjk
+    - yay -S noto-fonts noto-fonts-emoji noto-fonts-cjk --noconfirm
     - sudo pacman -S gnome-keyring libsecret --noconfirm
 
 install_terminal_tools:
@@ -75,22 +75,22 @@ install_terminal_tools:
   #requires: 
   #- install_yay
   commands:
-    - yay -S alacritty playerctl pulsemixer feh ranger ueberzug htop
+    - yay -S alacritty playerctl pulsemixer feh ranger ueberzug htop --noconfirm
 
 install_file_explorer:
   type: shell
   requires:
     - install_yay
   commands:
-    - yay -S thunar thunar-archive-plugin file-roller tumbler gvfs gvfs-smb sshfs unzip
+    - yay -S thunar thunar-archive-plugin file-roller tumbler gvfs gvfs-smb sshfs unzip --noconfirm
 
 install_personal_software:
   type: shell
   requires:
     - install_yay
   commands:
-    - yay -Sy ncspot brave discord_arch_electron vlc
-    - yay -Sy piper noisetorch-bin
+    - yay -Sy ncspot brave discord_arch_electron vlc --noconfirm
+    - yay -Sy piper noisetorch-bin --noconfirm
 
 all:
   type: shell

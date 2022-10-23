@@ -18,19 +18,19 @@ link_root_directories:
 link_config_directories:
   type: link
   links:
-    /home/jonark/.config/alacritty: .config/alacritty
-    /home/jonark/.config/dunst: .config/dunst
-    /home/jonark/.config/fish: .config/fish
-    /home/jonark/.config/gtk-3.0: .config/gtk-3.0
-    /home/jonark/.config/i3: .config/i3
-    /home/jonark/.config/i3status: .config/i3status
-    /home/jonark/.config/lf: .config/lf
-    /home/jonark/.config/ncspot: .config/ncspot
-    /home/jonark/.config/nvim: .config/nvim
-    /home/jonark/.config/polybar: .config/polybar
-    /home/jonark/.config/ranger: .config/ranger
-    /home/jonark/.config/sublime-text: .config/sublime-text
-    /home/jonark/.config/Thunar: .config/Thunar
+    /home/jonark/.config/: .config/alacritty
+    /home/jonark/.config/: .config/dunst
+    /home/jonark/.config/: .config/fish
+    /home/jonark/.config/: .config/gtk-3.0
+    /home/jonark/.config/: .config/i3
+    /home/jonark/.config/: .config/i3status
+    /home/jonark/.config/: .config/lf
+    /home/jonark/.config/: .config/ncspot
+    /home/jonark/.config/: .config/nvim
+    /home/jonark/.config/: .config/polybar
+    /home/jonark/.config/: .config/ranger
+    /home/jonark/.config/-text: .config/sublime-text
+    /home/jonark/.config/: .config/Thunar
 
 link_config_dotfiles:
   type: link
@@ -72,8 +72,8 @@ install_i3_wm:
 
 install_terminal_tools:
   type: shell
-  requires: 
-    - install_yay
+  #requires: 
+  #- install_yay
   commands:
     - yay -S alacritty playerctl pulsemixer feh ranger ueberzug htop
 
@@ -96,7 +96,6 @@ all:
   type: shell
   requires:
     - install_i3_wm
-    - install_file_explorer
     - link_root_dotfiles
     - link_root_directories
     - link_config_directories

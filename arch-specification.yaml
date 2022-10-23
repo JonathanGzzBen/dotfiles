@@ -1,6 +1,7 @@
 ---
 link_root_dotfiles:
   type: link
+  force: true
   links:
     /home/jonark/.vimrc: .vimrc
     # /home/jonark/.bashrc: .bashrc
@@ -11,12 +12,14 @@ link_root_dotfiles:
 
 link_root_directories:
   type: link
+  force: true
   links:
     /home/jonark/: bin
     /home/jonark/: .git
 
 link_config_directories:
   type: link
+  foce: true
   links:
     /home/jonark/.config/: .config/alacritty
     /home/jonark/.config/: .config/dunst
@@ -34,6 +37,7 @@ link_config_directories:
 
 link_config_dotfiles:
   type: link
+  force: true
   links:
     /home/jonark/.config/mimeapps.list: .config/mimeapps.list
     /home/jonark/.config/picom.conf: .config/picom.conf

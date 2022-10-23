@@ -102,6 +102,15 @@ install_fish:
     - curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
     - chsh -s $(which fish)
 
+install_neovim:
+  type: shell
+  requires:
+    - install_yay
+  commands:
+    - yay -S nodejs yarn npm neovim --noconfirm
+    - sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+
 all:
   type: shell
   requires:

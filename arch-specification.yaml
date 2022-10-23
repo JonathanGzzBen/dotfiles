@@ -41,9 +41,9 @@ link_config_dotfiles:
 install_yay:
   type: shell
   commands:
-    - mkdir repos -p 
-    - cd repos && git clone https://aur.archlinux.org/yay.git
-    - cd repos/yay && makepkg -si
+    - yay --version || mkdir repos -p 
+    - yay --version || cd repos && yay --version || git clone https://aur.archlinux.org/yay.git
+    - yay --version || cd repos/yay && yay --version || makepkg -si
 
 install_graphics_driver:
   type: shell
@@ -72,8 +72,8 @@ install_i3_wm:
 
 install_terminal_tools:
   type: shell
-  #requires: 
-  #- install_yay
+  requires: 
+    - install_yay
   commands:
     - yay -S alacritty playerctl pulsemixer feh ranger ueberzug htop --noconfirm
 

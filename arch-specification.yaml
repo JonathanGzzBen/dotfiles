@@ -1,0 +1,103 @@
+---
+link_root_dotfiles:
+  type: link
+  links:
+    /home/jonark/.vimrc: .vimrc
+    /home/jonark/.bashrc: .bashrc
+    /home/jonark/.p10k.zsh: .p10k.zsh
+    /home/jonark/.zshrc: .zshrc
+    /home/jonark/.Xkbmap: .Xkbmap
+    /home/jonark/.Xkbmap: .gtkrc-2.0
+
+link_root_directories:
+  type: link
+  links:
+    /home/jonark/bin: bin
+    /home/jonark/.git: .git
+
+link_config_directories:
+  type: link
+  links:
+    /home/jonark/.config/alacritty: .config/alacritty
+    /home/jonark/.config/dunst: .config/dunst
+    /home/jonark/.config/fish: .config/fish
+    /home/jonark/.config/gtk-3.0: .config/gtk-3.0
+    /home/jonark/.config/i3: .config/i3
+    /home/jonark/.config/i3status: .config/i3status
+    /home/jonark/.config/lf: .config/lf
+    /home/jonark/.config/ncspot: .config/ncspot
+    /home/jonark/.config/nvim: .config/nvim
+    /home/jonark/.config/polybar: .config/polybar
+    /home/jonark/.config/ranger: .config/ranger
+    /home/jonark/.config/sublime-text: .config/sublime-text
+    /home/jonark/.config/Thunar: .config/Thunar
+
+link_config_dotfiles:
+  type: link
+  links:
+    /home/jonark/.config/mimeapps.list: .config/mimeapps.list
+    /home/jonark/.config/picom.conf: .config/picom.conf
+
+install_yay:
+  type: shell
+  commands:
+    - mkdir repos -p 
+    - cd repos && git clone https://aur.archlinux.org/yay.git
+    - cd repos/yay && makepkg -si
+
+install_graphics_driver:
+  type: shell
+  commands:
+    - sudo pacman -S xf86-video-intel # intel
+      # - sudo pacman -S nvidia nvidia-utils nvidia-settings  # nvidia
+
+install_display_manager:
+  type: shell
+  requires:
+    - install_graphics_driver
+  commands:
+    - sudo pacman -S xorg lightdm lightdm-slick-greeter
+    - sudo cp etc-confs/lightdm.conf /etc/lightdm/lightdm.conf
+    - sudo systemctl enable lightdm
+
+install_i3_wm:
+  type: shell
+  requires:
+    - install_display_manager
+    - install_yay
+  commands:
+    - sudo pacman -S i3-wm i3status i3lock dmenu rofi polybar xdg-utils scrot xclip picom
+    - yay -S noto-fonts noto-fonts-emoji noto-fonts-cjk
+    - sudo pacman -S gnome-keyring libsecret
+
+install_terminal_tools:
+  type: shell
+  requires: 
+    - install_yay
+  commands:
+    - yay -S alacritty playerctl pulsemixer feh ranger ueberzug htop
+
+install_file_explorer:
+  type: shell
+  requires:
+    - install_yay
+  commands:
+    - yay -S thunar thunar-archive-plugin file-roller tumbler gvfs gvfs-smb sshfs unzip
+
+install_personal_software:
+  type: shell
+  requires:
+    - install_yay
+  commands:
+    - yay -Sy ncspot brave discord_arch_electron vlc
+    - yay -Sy piper noisetorch-bin
+
+all:
+  type: shell
+  requires:
+    - link_root_dotfiles
+    - link_root_directories
+    - link_config_directories
+    - link_config_dotfiles
+  commands:
+    - echo "Finished all installation"

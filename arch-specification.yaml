@@ -15,7 +15,6 @@ link_root_directories:
   force: true
   links:
     /home/jonark/: bin
-    /home/jonark/: .git
 
 link_config_directories:
   type: link
